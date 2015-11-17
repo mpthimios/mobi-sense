@@ -17,7 +17,7 @@
   margin: 0 0 15px;
 }
 
-.date {
+#routes.date {
   margin-top: -10px;
   top: 50%;
   left: -158px;
@@ -26,7 +26,7 @@
   position: absolute;
 }
 
-.circle {
+#routes.circle {
   /*margin-top: -10px;*/
     top: 50%;
     left: -38px;
@@ -39,7 +39,7 @@
     position: absolute;
 }
 
-.content {
+#routes.content {
   max-height: 20px;
   padding: 50px 20px 0;
   border-color: transparent;
@@ -49,7 +49,7 @@
   position: relative;
 }
 
-.content p {
+#routes.content p {
   max-height: 0;
   color: transparent;
   text-align: justify;
@@ -58,7 +58,7 @@
   overflow: hidden;
 }
 
-label {
+#routes.label {
   font-size: 1.3em;
   position: absolute;
   z-index: 100;
@@ -82,7 +82,7 @@ label {
     margin: 50px 0;
   }
 
-  label {
+  #routes.label {
     width: 85%;
     font-size: 1.1em;
     white-space: nowrap;
@@ -92,16 +92,16 @@ label {
     transform: translateX(18px);
   }
 
-  .content {
+  #routes.content {
     padding-top: 45px;    
   }
   
-  .content p {
+  #routes.content p {
     font-size: 0.9em;
     line-height: 1.4;
   }
 
-  .circle, .date {
+  #routes.circle, #routes.date {
     display: none;
   }
 }

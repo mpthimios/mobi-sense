@@ -7,6 +7,7 @@ function run($rootScope, $state) {
   Meteor.subscribe("userData");
   Meteor.subscribe("messages");
   Meteor.subscribe("users");
+  Meteor.subscribe("replies");
 
   Accounts.onLogin(function () {
     if ($state.is('login')) {
@@ -21,4 +22,8 @@ function run($rootScope, $state) {
       $state.go('login');
     }
   });
+
+  $rootScope.userImg = function(userId) {       
+       return Meteor.users.find({ _id: userId }).fetch()[0].services.twitter.profile_image_url;
+     };  
 }

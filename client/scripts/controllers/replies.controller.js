@@ -4,18 +4,19 @@ angular
 
 function RepliesCtrl ($scope, $stateParams, $ionicScrollDelegate, $timeout, $meteor, $ionicPopup, $log) {
   var messageId = $stateParams.messageId;
-  var isIOS = ionic.Platform.isWebView() && ionic.Platform.isIOS();
-
-  $scope.message = $scope.$meteorObject(Messages, messageId, false);
-  console.log($scope.message);
-
+  var isIOS = ionic.Platform.isWebView() && ionic.Platform.isIOS();  
+  
+  $scope.messages = $scope.$meteorCollection(function () {
+    return Messages.find({_id: messageId});
+  }, false);
+  
   $scope.replies = $scope.$meteorCollection(function () {
     return Replies.find({ messageId: messageId });
   }, false);
 
   $scope.$watchCollection('replies', function (oldVal, newVal) {
     var animate = oldVal.length !== newVal.length;
-    $ionicScrollDelegate.$getByHandle('repliesScroll').scrollBottom(animate);
+    $ionicScrollDelegate.$getByHandle('replyScroll').scrollBottom(animate);
   });
 
   $scope.data = {};
@@ -24,7 +25,7 @@ function RepliesCtrl ($scope, $stateParams, $ionicScrollDelegate, $timeout, $met
   $scope.inputDown = inputDown;
   $scope.closeKeyboard = closeKeyboard;
   $scope.sendPicture = sendPicture;
-
+ 
   ///
 
   function sendPicture () {
@@ -58,7 +59,7 @@ function RepliesCtrl ($scope, $stateParams, $ionicScrollDelegate, $timeout, $met
     if (_.isEmpty($scope.data.reply)) {
       return;
     }
-
+    console.log("about to send reply " + $scope.data.reply);
     $meteor.call('newReply', {
       text: $scope.data.reply,
       type: 'text',
