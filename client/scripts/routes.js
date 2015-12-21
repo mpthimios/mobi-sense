@@ -64,6 +64,24 @@ function config($stateProvider, $urlRouterProvider) {
           controller: 'RoutesCtrl'
         }
       }
+    })
+	.state('tab.news', {
+      url: '/news',
+      views: {
+        'tab-news': {
+          templateUrl: 'client/templates/news.html',
+          controller: 'NewsCtrl'
+        }
+      }
+    })
+    .state('tab.rating', {
+      url: '/rating',
+      views: {
+        'tab-rating': {
+          templateUrl: 'client/templates/rating.html',
+          controller: 'RatingCtrl'
+        }
+      }
     });
 
   $urlRouterProvider.otherwise('/tab/messages');

@@ -3,25 +3,38 @@ angular
   .controller('RatingCtrl', RatingCtrl);
 
  function RatingCtrl ($scope, $ionicModal) {  
-  //$scope.messages = $scope.$meteorCollection(Messages, false);
-  //$scope.userImg = userImg;
+  
 
   $ionicModal.fromTemplateUrl('client/templates/new-good.html', {
     scope: $scope
   }).then(function (modal) {
-    $scope.modal = modal;
+    $scope.modal1 = modal;
   });
 
-  $scope.$on('$destroy', function () {
-    $scope.modal.remove();
+ 
+$ionicModal.fromTemplateUrl('client/templates/new-bad.html', {
+    scope: $scope
+  }).then(function (modal) {
+    $scope.modal2 = modal;
   });
 
-  $scope.openNewMessageModal = openNewMessageModal;
-  
-  ////////////
+ 
+$ionicModal.fromTemplateUrl('client/templates/new-idea.html', {
+    scope: $scope
+  }).then(function (modal) {
+    $scope.modal3 = modal;
+  });
+  ////////////////
+  $scope.ShowModal1 = function (){
+         $scope.modal1.show()
+    }
 
-  function openNewMessageModal () {
-    $scope.modal.show();
+    $scope.ShowModal2= function (){
+         $scope.modal2.show()
+    }
+
+  $scope.ShowModal3= function (){
+         $scope.modal3.show()
+    }
+
   }
-
-}

@@ -26,16 +26,16 @@ function NewMessageCtrl($scope, $state, $meteor) {
 
   function newChat(userId) {
     // var chat = Chats.findOne({type: 'chat', userIds: {$all: [Meteor.userId(), userId]}});
-    // if (chat) {
-    //   return goToChat(chat._id);
-    // }
+//     if (chat) {
+  //     return goToChat(chat._id);
+   //  }
 
-    // $meteor.call('newChat', userId).then(goToChat);
+     //$meteor.call('newChat', userId).then(goToChat);
   }
 
   function goToChat(chatId) {
-    // hideModal();
-    // return $state.go('tab.chat-detail', {chatId: chatId});
+     //hideModal();
+     //return $state.go('tab.chat-detail', {chatId: chatId});
   }
 
   function sendMessage () {
@@ -45,7 +45,8 @@ function NewMessageCtrl($scope, $state, $meteor) {
 
     $meteor.call('newMessage', {
       text: $scope.data.message,
-      type: 'text'      
+      type: 'text',
+	classed: 'message'     
     });
 
     delete $scope.data.message;

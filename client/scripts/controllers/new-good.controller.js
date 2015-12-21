@@ -3,99 +3,74 @@ angular
   .controller('NewGoodCtrl', NewGoodCtrl);
 
 function NewGoodCtrl($scope, $state, $meteor) {
-  //$scope.$meteorSubscribe('users').then(function () {
-    //$scope.users = $scope.$meteorCollection(function () {
-      //return Meteor.users.find({ _id: { $ne: Meteor.userId() } });
-    //}, false);
-  //});
+
+    $scope.$meteorSubscribe('users').then(function () {
+    $scope.users = $scope.$meteorCollection(function () {
+      return Meteor.users.find({ _id: { $ne: Meteor.userId() } });
+    }, false);
+  });
+
+  $scope.timecnt=0;
+  $scope.cleancnt=0;
+  $scope.temperaturecnt=0;
+  $scope.drivercnt=0;
 
   $scope.hideModal = hideModal;
-  //$scope.newChat = newChat;
-
-  /*$scope.data = {};
-  $scope.sendMessage = sendMessage;
-  $scope.inputUp = inputUp;
-  $scope.inputDown = inputDown;
-  $scope.closeKeyboard = closeKeyboard; */
+  $scope.timee = timee;
+  $scope.clean = clean;
+  $scope.temperature = temperature;
+  $scope.driver = driver;
 
   ////////////
 
   function hideModal() {
-    $scope.modal.hide();
+    $scope.modal1.hide();
   }
 
-  function time(){
+    function timee(inc){
     //aukshsh metrhth time kata 1
-    time++;
-    $scope.modal.hide();
-  }
-
-  function clean(){
-    //aukshsh tou metrhth clean kata 1
-    clean++;
-    $scope.modal.hide();
-  }
-
-  function temperature(){
-    //aukshsh tou metrhth temperature kata 1
-    temperature++;
-    $scope.modal.hide();
-  }
-
-  function driver(){
-    //aukshsh tou metrhth driver kata 1
-    driver++;
-    $scope.modal.hide();
-  }
-
-  /*function newChat(userId) {
-    // var chat = Chats.findOne({type: 'chat', userIds: {$all: [Meteor.userId(), userId]}});
-    // if (chat) {
-    //   return goToChat(chat._id);
-    // }
-
-    // $meteor.call('newChat', userId).then(goToChat);
-  }
-
-  function goToChat(chatId) {
-    // hideModal();
-    // return $state.go('tab.chat-detail', {chatId: chatId});
-  }
-
-  function sendMessage () {
-    if (_.isEmpty($scope.data.message)) {
-      return;
-    }
-
+    $scope.timecnt += inc;
     $meteor.call('newMessage', {
-      text: $scope.data.message,
-      type: 'text'      
+      text: ' "Time" was upvoted by a user',
+      type: 'text',
+	classed: 'else'      
+    });
+    $scope.modal1.hide();
+  }
+
+  function clean(inc){
+    //aukshsh tou metrhth clean kata 1
+    $scope.cleancnt += inc;
+    $meteor.call('newMessage', {
+      text: ' "Clean" was upvoted by a user',
+      type: 'text',
+	classed: 'else'      
+    });
+    $scope.modal1.hide();
+    console.log($scope.cleancnt);
+  }
+
+  function temperature(inc){
+    //aukshsh tou metrhth temperature kata 1
+    $scope.temperaturecnt += inc;
+    $meteor.call('newMessage', {
+      text: ' "Temperature" was upvoted by a user',
+      type: 'text',
+	classed: 'else'      
     });
 
-    delete $scope.data.message;
+    $scope.modal1.hide();
   }
 
-  function inputUp () {
-    console.log("input up");
-    if (isIOS) {
-      $scope.data.keyboardHeight = 216;      
-    }
-
-    $timeout(function() {
-      $ionicScrollDelegate.$getByHandle('chatScroll').scrollBottom(true);
-    }, 300);
+  function driver(inc){
+    //aukshsh tou metrhth driver kata 1
+    $scope.drivercnt += inc;
+    $meteor.call('newMessage', {
+      text: ' "Driver" was upvoted by a user',
+      type: 'text',
+	classed: 'else'      
+    });
+    $scope.modal1.hide();
   }
 
-  function inputDown () {
-    console.log("input down");
-    if (isIOS) {
-      $scope.data.keyboardHeight = 0;
-    }
-
-    $ionicScrollDelegate.$getByHandle('chatScroll').resize();
-  }
-
-  function closeKeyboard () {
-    // cordova.plugins.Keyboard.close();
-  }*/
 }
