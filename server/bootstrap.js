@@ -62,14 +62,14 @@ Meteor.startup(function () {
     var Fiber = Npm.require('fibers');  
       
     Fiber(function() {
-      //NewsFeed.remove({});
+      NewsFeed.remove({});
       var fiber = Fiber.current;
       for (var i = 0; i < data.length; i++) {
           // console.log("new twit");
           // console.log(data[i].text);
-          // console.log(data[i].created_at);
+          //console.log(data[i].user.screen_name);
           // console.log(data[i].user.id);
-          timeline_item = {user_id: data[i].user.id, text: data[i].text, created_at: new Date(Date.parse(data[i].created_at.replace(/( +)/, ' UTC$1'))), type: "tweet"};
+          timeline_item = {user_id: data[i].user.id, text: data[i].text, created_at: new Date(Date.parse(data[i].created_at.replace(/( +)/, ' UTC$1'))), type: "tweet", account_name: data[i].user.screen_name};
           NewsFeed.insert(timeline_item);
       }
     }).run();    

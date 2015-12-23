@@ -1,4 +1,9 @@
-
+ion-scroll[direction=x] {
+  width: 100vw;
+}
+ion-scroll[direction=y] {
+  height: 100vh;
+}
 
 /* -------------------------------------
  * timeline
