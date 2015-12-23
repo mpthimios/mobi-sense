@@ -1,46 +1,31 @@
-<ion-view view-title="Στάσεις">
-  <ion-content>
-    <ul id='timeline'>
-	    <div class='relative'>
-	    	<span class='circle'></span>
-	    </div>
+<ion-view view-title="Διαδρομές">  
+  
+  <ion-nav-buttons side="left">
+    <button ng-click="toggle_search_focus()" class="button button-clear button-positive button-icon ion-android-arrow-back" ng-show="search_focus"></button>
+  </ion-nav-buttons>
 
-	  <li class='work'>    
-	    <div class="relative">
-	      <label for='work5'>Περιστέρι</label>
-	      
-	      <span class='circle'></span>
-	    </div>
-	    <div class='content'>
-	      <p>        
-	      </p>
-	    </div>
-	  </li> 
+  <ion-content overflow-scroll="true"> 
+    <input id="routeSearch" type="search" ng-model="search.text" placeholder="Search" ng-show="!search_focus"/>  
+      <div class="list" ng-show="!search_focus">
+        <ion-item
+                ng-repeat="route in routes"                            
+                ng-click="toggle_search_focus(route.route_id)" >                
+                {{route.route_short_name}} {{route.route_long_name}} {{route.stops.length}}
+        </ion-item>
+      </div>
 
-	 <!-- <li class='work'>    
-	    <div class="relative"> 
-	      <label for='work5'>'Αγιος Αντώνιος</label>  
-	      
-	      <span class='circle'></span>
-	    </div> 
-	    <div class='content'>
-	      <p>        
-	      </p>
-	    </div>
-	  </li> -->
-
-	  <li class='work'>    
-	    <div class="relative">
-	      <label for='work5'>Σεπόλια</label>
-	      
-	      <span class='circle'></span>
-	    </div>
-	    <div class='content'>
-	      <p>        
-	      </p>
-	    </div>
-	  </li> 
-
-	</ul>
+    <div id="stops" ng-show="search_focus">
+      <div class="line-header">
+        {{route.route_short_name}} {{route.route_long_name}} 
+      </div>    
+      <div
+              ng-repeat="stop in stops"
+              class="timeline"
+              type="item-text-wrap"
+              href="#">
+        {{stop.stop_name}}
+      </div>
+    </div>
   </ion-content>
+
 </ion-view>

@@ -14,5 +14,5 @@ else {
 }
 
 function onReady() {
-  angular.bootstrap(document, ['Buschat']);
+  angular.bootstrap(document, ['Buschat']);  
 }

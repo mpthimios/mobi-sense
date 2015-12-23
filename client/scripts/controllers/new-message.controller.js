@@ -76,3 +76,4 @@ function NewMessageCtrl($scope, $state, $meteor) {
     // cordova.plugins.Keyboard.close();
   }
 }
+

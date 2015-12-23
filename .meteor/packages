@@ -25,3 +25,12 @@ reywood:publish-composite
 okland:camera-ui
 accounts-twitter
 dotansimha:accounts-ui-angular
+
+chfritz:gtfs
+meteorhacks:npm
+
+
+npm-container
+meteorhacks:subs-manager
+mirrorcell:geolocation-plus
+schiller:twit

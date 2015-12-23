@@ -86,3 +86,4 @@ function config($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.otherwise('/tab/messages');
 }
+
