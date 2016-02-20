@@ -2,42 +2,41 @@ angular
   .module('Buschat')
   .controller('RoutesCtrl', RoutesCtrl);
  
-function RoutesCtrl ($scope, $meteor, $ionicScrollDelegate, $ionicModal) {
-	//reactiveContext = $reactive(this).attach($scope);
+function RoutesCtrl ($scope, $meteor, $ionicScrollDelegate, $ionicModal, $reactive) {
+	$reactive($scope).attach($scope);
+	//https://github.com/Urigo/angular-meteor/issues/1237
 
-	$meteor.subscribe('all-routes').then(function(){
+	$scope.search = {text: ''};
+	$scope.search_focus = false;	
+	$scope.route = {id: '237-20'};
+
+	$scope.subscribe('all-routes', function (){return []}, function(){
 		$scope.routes = $meteor.collection(function() {
-            return Routes.find();
+            return Routes.find({$or: [{route_short_name: { '$regex' : '.*' + $scope.getReactively("search.text")}}, 
+				{route_long_name: { '$regex' : '.*' + $scope.getReactively("search.text") }}]
+			});
         });
 		var delegate = $ionicScrollDelegate.$getByHandle('myScroll');
         delegate.resize();
 	});		
 
-	$scope.search = {text: ''};
-	$scope.search_focus = false;
-
-	$scope.$meteorAutorun(function(){
-		var values = $scope.getReactively("search.text");		
-		$scope.routes = $meteor.collection(function() {
-            return Routes.find({$or: [{route_short_name: { '$regex' : '.*' + $scope.search.text }}, 
-				{route_long_name: { '$regex' : '.*' + $scope.search.text }}]
-			});
+	$scope.subscribe('get-stops', function(){
+		return [{route_id: $scope.getReactively("route.id")}];
+	}, function(){		
+		selected_route = $scope.$meteorCollection(function() {
+        	return Routes.find({route_id: $scope.getReactively("route.id")});
         });
+        $scope.stops = selected_route[0].stops;
+        $scope.route = selected_route[0];
         var delegate = $ionicScrollDelegate.$getByHandle('myScroll');
+        delegate.scrollTop();
         delegate.resize();
 	});
 
 	$scope.toggle_search_focus = function(route_id){
-		console.log("toggle");		
-		console.log(route_id);
+		console.log("toggle " + route_id);				
 		if (route_id != undefined){
-			selected_route = $meteor.collection(function() {
-            	return Routes.find({route_id: route_id});
-	        });
-	        console.log(selected_route);
-	        $scope.stops = selected_route[0].stops;
-	        $scope.route = selected_route[0];
-	        $ionicScrollDelegate.scrollTop();
+			$scope.route.id = route_id;
 		}
 		$scope.search_focus = !$scope.search_focus;			
 	}	
@@ -61,7 +60,7 @@ function RoutesCtrl ($scope, $meteor, $ionicScrollDelegate, $ionicModal) {
 	  }).then(function (modal) {
 	    $scope.modal3 = modal;
 	  });
-	  ////////////////
+	  //////////////
 	  $scope.ShowModal1 = function (){
 	        $scope.modal1.show();
 	        var delegate = $ionicScrollDelegate.$getByHandle('myScroll');

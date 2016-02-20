@@ -42,7 +42,14 @@ Meteor.publish('routes', function (query) {
 
 Meteor.publish('all-routes', function () {    
   console.log("entered all-routes");  
-  return Routes.find({agency_key: 'oasa'});
+  return Routes.find({agency_key: 'oasa'}, { fields: { route_id: true, route_short_name: true, route_long_name: true, stopsNumber: true } });
+});
+
+Meteor.publish('get-stops', function (options) {    
+  console.log("entered get-stops");  
+  console.log(options);
+  route = Routes.find({agency_key: 'oasa', route_id: options.route_id}, { fields: { route_id: true, route_short_name: true, route_long_name: true, stops: true, stopsNumber: true } });  
+  return route;
 });
 
 Meteor.publish('search-routes', function (query) {

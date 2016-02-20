@@ -3,9 +3,10 @@ accounts-oauth@1.1.8
 accounts-twitter@1.0.6
 accounts-ui@1.1.6
 accounts-ui-unstyled@1.1.8
-angular@1.3.0
-angular-meteor-data@0.0.7
-angular-templates@0.0.2
+aldeed:tabular@1.6.0
+angular@1.3.6
+angular-meteor-data@0.2.0
+angular-templates@0.0.3
 angular:angular@1.4.8
 angular:angular-animate@1.4.8
 angular:angular-sanitize@1.4.8
@@ -16,6 +17,7 @@ autoupdate@1.2.4
 babel-compiler@5.8.24_1
 babel-runtime@0.1.4
 base64@1.0.4
+benjamine:jsondiffpatch@0.1.38_1
 binary-heap@1.0.4
 blaze@2.1.3
 blaze-html-templates@1.0.1
@@ -35,7 +37,7 @@ ddp-server@1.2.2
 deps@1.0.9
 diff-sequence@1.0.1
 dotansimha:accounts-ui-angular@0.0.2
-driftyco:ionic@1.1.0_2
+driftyco:ionic@1.2.4
 ecmascript@0.1.6
 ecmascript-runtime@0.2.6
 ejson@1.0.7
@@ -62,13 +64,13 @@ meteor@1.1.10
 meteor-base@1.0.1
 meteorhacks:async@1.0.0
 meteorhacks:npm@1.5.0
-meteorhacks:subs-manager@1.6.2
+meteorhacks:subs-manager@1.6.3
 minifiers@1.1.7
 minimongo@1.0.10
 mirrorcell:geolocation-plus@1.1.8
 mobile-experience@1.0.1
 mobile-status-bar@1.0.6
-momentjs:moment@2.10.6
+momentjs:moment@2.11.2
 mongo@1.1.3
 mongo-id@1.0.1
 npm-bcrypt@0.7.8_2
@@ -80,7 +82,7 @@ observe-sequence@1.0.7
 okland:accounts-phone@0.0.21
 okland:camera-ui@0.0.2
 ordered-dict@1.0.4
-pbastowski:angular-babel@1.0.7
+pbastowski:angular-babel@1.0.9
 promise@0.5.1
 random@1.0.5
 rate-limit@1.0.0
@@ -90,7 +92,7 @@ reload@1.1.4
 retry@1.0.4
 reywood:publish-composite@1.4.2
 routepolicy@1.0.6
-schiller:twit@0.0.1
+schiller:twit@0.0.3
 service-configuration@1.0.5
 session@1.1.1
 sha@1.0.4
