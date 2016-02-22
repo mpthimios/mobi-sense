@@ -43,7 +43,7 @@ function NewMessageCtrl($scope, $state, $meteor) {
       return;
     }
 
-    $meteor.call('newMessage', {
+    $meteor.call('newActivity', {
       text: $scope.data.message,
       type: 'text',
 	classed: 'message'     

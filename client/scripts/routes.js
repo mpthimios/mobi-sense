@@ -32,27 +32,29 @@ function config($stateProvider, $urlRouterProvider) {
         }
       }
     })
+
     .state('login', {
       url: '/login',
       templateUrl: 'client/templates/login.html',
       controller: 'LoginCtrl'
     })
-    .state('profile', {
-      url: '/profile',
-      templateUrl: 'client/templates/profile.html',
-      controller: 'ProfileCtrl',
-      resolve: {
-        user: ['$meteor', function ($meteor) {
-          return $meteor.requireUser();
-        }]
-      }
-    })
+
+ 
     .state('tab.settings', {
       url: '/settings',
       views: {
         'tab-settings': {
           templateUrl: 'client/templates/settings.html',
           controller: 'SettingsCtrl'
+        }
+      }
+    })
+    .state('tab.activity', {
+      url: '/activity',
+      views: {
+        'tab-activity': {
+          templateUrl: 'client/templates/activity.html',
+          controller: 'ActivityCtrl'
         }
       }
     })
@@ -74,6 +76,7 @@ function config($stateProvider, $urlRouterProvider) {
         }
       }
     })
+
     .state('tab.rating', {
       url: '/rating',
       views: {

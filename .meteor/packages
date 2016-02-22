@@ -15,7 +15,7 @@ standard-minifiers      # JS/CSS minifiers run for production mode
 es5-shim                # ECMAScript 5 compatibility for older browsers.
 
 angular@1.2.0-rc.5
-driftyco:ionic
+driftyco:ionic@1.1.0_2
 momentjs:moment
 fourseven:scss
 jasonaibrahim:angular-moment
@@ -30,8 +30,14 @@ chfritz:gtfs
 meteorhacks:npm
 
 
-npm-container
+#npm-container
 meteorhacks:subs-manager
 mirrorcell:geolocation-plus
 schiller:twit
 angularjs:angular-sanitize
+
+
+npm-container
+aramk:ionicons
+pagebakers:ionicons
+fortawesome:fontawesome

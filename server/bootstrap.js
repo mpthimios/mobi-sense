@@ -62,7 +62,7 @@ Meteor.startup(function () {
     var Fiber = Npm.require('fibers');  
       
     Fiber(function() {
-      NewsFeed.remove({});
+     NewsFeed.remove({});
       var fiber = Fiber.current;
       for (var i = 0; i < data.length; i++) {
           // console.log("new twit");

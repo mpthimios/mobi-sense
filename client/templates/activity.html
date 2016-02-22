@@ -1,0 +1,25 @@
+<ion-view view-title="Δραστηριότητα Χρηστών">  
+  <ion-nav-buttons side="right">
+    <button ng-click="openNewMessageModal()" class="button button-clear button-positive button-icon ion-ios-compose-outline">Νέο μήνυμα</button>
+  </ion-nav-buttons>
+  <ion-content overflow-scroll="true"> 
+      <div class="list">
+        <ion-item
+                class="item-feed item-remove-animate item-avatar item-icon-right"
+                ng-repeat="activity in activities">
+                <img ng-src="https://twitter.com/{{activity.account_name}}/profile_image?size=normal"/>
+                <h2 ng-bind-html="activity.text | linky:'_blank'"></h2>
+                <span class="last-message-timestamp">{{activity.created_at | calendar}}</span>
+        </ion-item>
+      </div>
+ <div class="float-button">
+  <span class="height-fix">
+    <a ui-sref="add-trip" ng-click="openNewMessageModal()" class="content">
+      <i class="ion-plus-round"> </i>
+    </a>
+  </span>
+</div>
+
+  </ion-content>
+
+</ion-view>

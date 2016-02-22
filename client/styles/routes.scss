@@ -117,3 +117,131 @@ ion-scroll[direction=y] {
     display: none;
   }
 }
+
+.ios .button-fab ion-icon {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      font-size: 2.8rem; }
+  .ios [fab-center] {
+    left: 50%;
+    margin-left: -28px; }
+  .ios [fab-top] {
+    top: 16px; }
+  .ios [fab-right] {
+    right: 16px; }
+  .ios [fab-bottom] {
+    bottom: 16px; }
+  .ios [fab-left] {
+    left: 16px; }
+  .ios [fab-fixed] {
+    position: fixed; }
+
+  .md .button-fab {
+    border-radius: 50%;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.1);
+    -webkit-transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1), background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1), background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1); }
+    .md .button-fab.activated {
+      box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.4), 0 4px 7px 0 rgba(0, 0, 0, 0.1); }
+
+ .md .button-fab {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    line-height: 56px;
+    min-width: 0;
+    vertical-align: middle;
+    border-radius: 50%;
+    background-clip: padding-box;
+    overflow: hidden;
+    font-size: 14px; }
+    .md .button-fab ion-icon {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      font-size: 2.8rem; }
+  .md [fab-center] {
+    left: 50%;
+    margin-left: -28px; }
+  .md [fab-top] {
+    top: 16px; }
+  .md [fab-right] {
+    right: 16px; }
+  .md [fab-bottom] {
+    bottom: 16px; }
+  .md [fab-left] {
+    left: 16px; }
+  .md [fab-fixed] {
+    position: fixed; }
+
+.ios .button-fab {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    line-height: 56px;
+    min-width: 0;
+    vertical-align: middle;
+    border-radius: 50%;
+    background-clip: padding-box;
+    overflow: hidden;
+    font-size: 14px; }
+    .ios .button-fab ion-icon {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      font-size: 2.8rem; }
+  .ios [fab-center] {
+    left: 50%;
+    margin-left: -28px; }
+  .ios [fab-top] {
+    top: 16px; }
+  .ios [fab-right] {
+    right: 16px; }
+  .ios [fab-bottom] {
+    bottom: 16px; }
+  .ios [fab-left] {
+    left: 16px; }
+  .ios [fab-fixed] {
+    position: fixed; }
+
+    md .button-fab {
+    border-radius: 50%;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.1);
+    -webkit-transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1), background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1), background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1); }
+    .md .button-fab.activated {
+      box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.4), 0 4px 7px 0 rgba(0, 0, 0, 0.1); }
+.md .button-fab {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    line-height: 56px;
+    min-width: 0;
+    vertical-align: middle;
+    border-radius: 50%;
+    background-clip: padding-box;
+    overflow: hidden;
+    font-size: 14px; }
+    .md .button-fab ion-icon {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      font-size: 2.8rem; }
+  .md [fab-center] {
+    left: 50%;
+    margin-left: -28px; }
+  .md [fab-top] {
+    top: 16px; }
+  .md [fab-right] {
+    right: 16px; }
+  .md [fab-bottom] {
+    bottom: 16px; }
+  .md [fab-left] {
+    left: 16px; }
+  .md [fab-fixed] {
+    position: fixed; }

@@ -61,6 +61,8 @@ function RoutesCtrl ($scope, $meteor, $ionicScrollDelegate, $ionicModal) {
 	  }).then(function (modal) {
 	    $scope.modal3 = modal;
 	  });
+
+	
 	  ////////////////
 	  $scope.ShowModal1 = function (){
 	        $scope.modal1.show();
@@ -75,5 +77,6 @@ function RoutesCtrl ($scope, $meteor, $ionicScrollDelegate, $ionicModal) {
 	  $scope.ShowModal3= function (){
 	         $scope.modal3.show()
 	    }
+	  
 
 }

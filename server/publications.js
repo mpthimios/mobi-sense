@@ -31,6 +31,8 @@ Meteor.publishComposite('messages', function () {
   }
 });
 
+
+
 Meteor.publish('routes', function (query) {
     
   //return Routes.find({route_id: "Μ1-20", agency_key: "oasa2"});
@@ -61,8 +63,15 @@ Meteor.publish('search-routes', function (query) {
   return routes;
     
 });
+  
+Meteor.publish('activity', function () {    
+  console.log("entered activity");  
+  return Activity.find({}, {sort: {created_at: -1}}, {limit : 10});
+});
 
 Meteor.publish('newsfeed', function () {    
   console.log("entered newsfeed");  
   return NewsFeed.find({}, {sort: {created_at: -1}}, {limit : 10});
 });
+
+

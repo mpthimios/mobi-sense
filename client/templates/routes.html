@@ -38,15 +38,18 @@
       </div>
     </ion-scroll>
     <ion-scroll direction="y" style="width:100%;height:30%;padding-top: 1%;border-top: 2px solid;">
-      <button ng-click="ShowModal1()" class="button button-full button-balanced">
-        What's good
+      <button round secondary ng-click="ShowModal1()">
+        Τι μου άρεσε
       </button>
-      <button ng-click="ShowModal2()" class="button button-full button-assertive">
-        What's bad
+      <button round danger ng-click="ShowModal2()">
+        Τι δεν μου άρεσε
       </button>
-      <button ng-click="ShowModal3()" class="button button-full button-positive">
-        Help us improve
+    
+    <button  round ng-click="ShowModal3()">
+        Τι θα πρότεινα
       </button>
+
+      <button fab>FAB</button>
      </ion-scroll>
   </ion-content>
 

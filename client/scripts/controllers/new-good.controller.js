@@ -10,67 +10,42 @@ function NewGoodCtrl($scope, $state, $meteor) {
     }, false);
   });
 
-  $scope.timecnt=0;
-  $scope.cleancnt=0;
-  $scope.temperaturecnt=0;
-  $scope.drivercnt=0;
-
   $scope.hideModal = hideModal;
-  $scope.timee = timee;
-  $scope.clean = clean;
-  $scope.temperature = temperature;
-  $scope.driver = driver;
+$scope.data = {};
+$scope.sendMessage = sendMessage;
 
-  ////////////
-
-  function hideModal() {
+function hideModal() {
     $scope.modal1.hide();
   }
 
-    function timee(inc){
-    //aukshsh metrhth time kata 1
-    $scope.timecnt += inc;
-    $meteor.call('newMessage', {
-      text: ' "Time" was upvoted by a user',
+
+ function sendMessage() {
+   // if (_.isEmpty($scope.data.line)) {
+     // return;
+    //}
+    console.log('prin meteor call');
+
+    $meteor.call('newActivity', {
+      text: 'Για τη γραμμή ' + $scope.data.line + ' του ' + $scope.data.mean + 'υ αναφέρθηκε ότι  ' + $scope.data.field +'. Η βαθμολογία που έλαβε είναι: ' + $scope.data.rating ,
       type: 'text',
-	classed: 'else'      
+  classed: 'good'     
     });
+    console.log('new activity added');
+
+    delete $scope.data.mean;
+    //delete $scope.data.field;
+    delete $scope.data.line;  
     $scope.modal1.hide();
   }
 
-  function clean(inc){
-    //aukshsh tou metrhth clean kata 1
-    $scope.cleancnt += inc;
-    $meteor.call('newMessage', {
-      text: ' "Clean" was upvoted by a user',
-      type: 'text',
-	classed: 'else'      
-    });
-    $scope.modal1.hide();
-    console.log($scope.cleancnt);
+  function inputUp () {
+    console.log("input up");
+    if (isIOS) {
+      $scope.data.keyboardHeight = 216;      
+    }
+
+    $timeout(function() {
+      $ionicScrollDelegate.$getByHandle('chatScroll').scrollBottom(true);
+    }, 300);
   }
-
-  function temperature(inc){
-    //aukshsh tou metrhth temperature kata 1
-    $scope.temperaturecnt += inc;
-    $meteor.call('newMessage', {
-      text: ' "Temperature" was upvoted by a user',
-      type: 'text',
-	classed: 'else'      
-    });
-
-    $scope.modal1.hide();
-  }
-
-  function driver(inc){
-    //aukshsh tou metrhth driver kata 1
-    $scope.drivercnt += inc;
-    $meteor.call('newMessage', {
-      text: ' "Driver" was upvoted by a user',
-      type: 'text',
-	classed: 'else'      
-    });
-    $scope.modal1.hide();
-  }
-
 }

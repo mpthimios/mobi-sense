@@ -7,27 +7,89 @@
   </ion-header-bar>
 
   <ion-content>
+         
     <div class="row">
-      <div class="col"><a class="item item-avatar" href="#">
-          <img src="https://cdn4.iconfinder.com/data/icons/ballicons-2-free/100/669347-watch-128.png"> <button class="button button-clear button-positive" ng-click="timee(1)">
-              Συνέπεια
-          </button></a></div>
-      <div class="col"><a class="item item-avatar" href="#">
-          <img src="https://cdn2.iconfinder.com/data/icons/domestic-and-commercial-cleaning-icon-set/128/sponge_2__.png"> <button class="button button-clear button-positive" ng-click="clean(1)">
-              Καθαριότητα
-          </button></a> </div>
-    </div>
+    <a class="item item-avatar" href="#">
+          <img src="https://cdn3.iconfinder.com/data/icons/ballicons-reloaded-free/512/icon-59-128.png"> </a> 
+      <div class="col">
       
+          <ion-radio ng-model="data.field" value="ήρθε στην ώρα του">Ήρθε στην ώρα του!</ion-radio></div>
+          
+
+        <a class="item item-avatar" href="#">
+          <img src="https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Bus-128.png"></a>
+        <div class="col">
+        
+           <ion-radio ng-model="data.field" value="εξυπηρετεί καλά τις περιοχές από όπου περνά">Εξυπηρετεί καλά τις περιοχές από όπου περνά</ion-radio></div>
+          </div>
+    
     <div class="row">
-      <div class="col"><a class="item item-avatar" href="#">
-          <img src="https://cdn3.iconfinder.com/data/icons/ballicons-reloaded-free/512/icon-59-128.png"> <button class="button button-clear button-positive" ng-click="temperature(1)">
-              Θερμοκρασία
-          </button></a></div>
-      <div class="col"><a class="item item-avatar" href="#">
-          <img src="https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Bus-128.png"> <button class="button button-clear button-positive" ng-click="driver(1)">
-              Οδηγός
-          </button></a> </div>
+      <a class="item item-avatar" href="#">
+          <img src="https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Bus-128.png"></a>
+      <div class="col">
+      
+          <ion-radio ng-model="data.field" value="είχε καλό κλιματισμό">Είχε την κατάλληλη θερμοκρασία</ion-radio></div>
+          
+
+    
+      <a class="item item-avatar" href="#">
+          <img src="https://cdn4.iconfinder.com/data/icons/ballicons-2-free/100/669347-watch-128.png"></a> 
+      <div class="col">
+           <ion-radio ng-model="data.field" value="ο οδηγός ήταν πολύ εξυπηρετικός">Ο οδηγός ήταν εξυπηρετικός</ion-radio>
+          </div>
+          </div>
+          <div class="row">
+      <a class="item item-avatar" href="#">
+          <img src="https://cdn2.iconfinder.com/data/icons/domestic-and-commercial-cleaning-icon-set/128/sponge_2__.png"></a>
+      <div class="col">
+          <ion-radio ng-model="data.field" value="δεν υπήρχε συνοστισμός">Δεν υπήρχε συνοστισμός</ion-radio>
     </div>
+      <a class="item item-avatar" href="#">
+          <img src="https://cdn2.iconfinder.com/data/icons/domestic-and-commercial-cleaning-icon-set/128/sponge_2__.png"></a>
+    <div class="col">
+          <ion-radio ng-model="data.field" value="ήταν πολύ καθαρό">Ήταν πολύ καθαρό</ion-radio>
+    </div>
+</div>
+   <div class="list">
+
+<!-- epilogh mesou -->
+  <label class="item item-input item-select">
+    <div class="input-label">
+      Μέσο:
+    </div>
+    <select ng-model="data.mean">
+      <option selected>Μετρό</option>
+      <option>Λεωφορείο</option>
+      <option>Τραμ</option>
+      <option>Προαστιακός</option>
+    </select>
+  </label>
+
+</div>
+<!-- epilogh grammhs -->
+<div class="list">
+
+  <div class="item item-input-inset">
+    <label class="item-input-wrapper">
+      <input type="text" placeholder="Γραμμή" ng-model="data.line">
+    </label>
+    
+  </div>
+
+</div>
+
+<!-- epilogh vathmologias -->
+
+<div class="item range">
+  <i class="icon ion-volume-low"></i>
+  <input type="range" name="rating" ng-model="data.rating" min="0" max="5" value="3">
+  <i class="icon ion-volume-high"></i>
+</div>
+
+<button ng-click="sendMessage()" class="button button-clear button-positive">Send</button> 
+
+  
+
   </ion-content>
   
 </ion-modal-view>

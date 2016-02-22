@@ -8,6 +8,7 @@ function run($rootScope, $state) {
   Meteor.subscribe("messages");
   Meteor.subscribe("users");
   Meteor.subscribe("replies");
+ // Meteor.subscribe("activity");
   //Meteor.subscribe("routes");
   routeSubs = new SubsManager({cacheLimit: 9999, expireIn: 9999});
 
