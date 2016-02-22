@@ -10,8 +10,8 @@ Meteor.startup(function () {
       secret      : 'sM5uBya3s27S6U1vPfGb9jHv54BolRju5Dqn5AOfQ9ILW6YeMx'
     });
 
-  //console.log(GTFS);
-  //GTFS.importFromZip('oasa', '/vagrant/buschat/packages/oasa.gtfs.zip');
+  // console.log(GTFS);
+  // GTFS.importFromZip('oasa', '/vagrant/buschat/packages/oasa.gtfs.zip');
   
   GTFS.getRoutesByAgency('oasa', function(err, routes) {
       console.log("routes");
@@ -38,11 +38,12 @@ Meteor.startup(function () {
           var keys = [];
           for(var k in StopsByRoute){        
             keys.push(k);
-            var json = JSON.parse(StopsByRoute[k]);        
+            var json = JSON.parse(StopsByRoute[k]);
+            var stopsNumber = json.length;        
             Routes.update({
                "route_id" : k, "agency_key" : 'oasa'
              }, {
-               $set: {"stops": json}
+               $set: {"stops": json, "stopsNumber" : stopsNumber}
              }, function(error) {
                 if(error)
                    console.log(error);
