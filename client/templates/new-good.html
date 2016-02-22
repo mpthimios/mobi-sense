@@ -1,9 +1,7 @@
 <ion-modal-view ng-controller="NewGoodCtrl">
   <ion-header-bar>
     <h1 class="title">Νέα Αναφορά</h1>
-    <div class="buttons">
-      <button class="button button-clear button-positive" ng-click="hideModal()">Ακύρωση</button>
-    </div>
+    
   </ion-header-bar>
 
   <ion-content>
@@ -18,7 +16,7 @@
           
 
         <a class="item item-avatar" href="#">
-          <img src="https://cdn4.iconfinder.com/data/icons/ballicons-2-free/100/like-128.png"></a>
+          <img src="https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Bus-128.png"></a>
         <div class="col">
         
            <ion-radio ng-model="data.field" value="εξυπηρετεί καλά τις περιοχές από όπου περνά">Εξυπηρετεί καλά τις περιοχές από όπου περνά</ion-radio></div>
@@ -34,7 +32,7 @@
 
     
       <a class="item item-avatar" href="#">
-        <img src="https://cdn4.iconfinder.com/data/icons/ballicons-2-free/100/like-128.png"></a>
+        <img src="https://cdn3.iconfinder.com/data/icons/social-icons-5/128/Like.png"></a>
       <div class="col">
            <ion-radio ng-model="data.field" value="ο οδηγός ήταν πολύ εξυπηρετικός">Ο οδηγός ήταν εξυπηρετικός</ion-radio>
           </div>
@@ -84,14 +82,25 @@
 <!-- epilogh vathmologias -->
 
 <div class="item range">
-  <i class="icon ion-volume-low"></i>
+  <i class="icon ion-sad"></i>
   <input type="range" name="rating" ng-model="data.rating" min="0" max="5" value="3">
-  <i class="icon ion-volume-high"></i>
+  <i class="icon ion-happy"></i>
 </div>
 
-<button ng-click="sendMessage()" class="button button-clear button-positive">Send</button> 
 
-  
+
+<div class="row">
+      <div class="col">
+        <button ng-click="sendMessage()" class="button button-full button-balanced">
+          Υποβολή
+        </button>
+      </div>
+      <div class="col">
+        <button ng-click="hideModal()" class="button button-full button-assertive">
+          Ακύρωση
+        </button>
+      </div>
+      </div>  
 
   </ion-content>
   

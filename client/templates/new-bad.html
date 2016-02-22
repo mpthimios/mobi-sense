@@ -1,17 +1,19 @@
 <ion-modal-view ng-controller="NewBadCtrl">
   <ion-header-bar>
     <h1 class="title">Νέα Αναφορά</h1>
-    <div class="buttons">
-        <button class="button button-clear button-positive" ng-click="hideModal()">Ακύρωση</button>
-    </div>
+   
   </ion-header-bar>
 
   <ion-content>
     <div class="row">
+    <a class="item item-avatar" href="#">
+          <img src="https://cdn4.iconfinder.com/data/icons/ballicons-2-free/100/669347-watch-128.png"> </a>
         <div class="col">
       <!-- <a class="item item-avatar" href="#">
           <img src="https://cdn4.iconfinder.com/data/icons/ballicons-2-free/100/669347-watch-128.png"> </a> -->
           <ion-radio ng-model="data.field" value="καθυστέρησε">Καθυστέρησε!</ion-radio></div>
+        <a class="item item-avatar" href="#">
+          <img src="https://cdn2.iconfinder.com/data/icons/free-basic-icon-set-2/300/10-128.png"></a>
         <div class="col">       
       <!-- <a class="item item-avatar" href="#">
           <img src="https://cdn4.iconfinder.com/data/icons/ballicons-2-free/100/669347-watch-128.png"></a> --> 
@@ -21,10 +23,14 @@
     </div>
 
     <div class="row">
+    <a class="item item-avatar" href="#">
+          <img src="https://cdn3.iconfinder.com/data/icons/10con/512/traffic_stop-128.png"> </a>
         <div class="col">
       <!-- <a class="item item-avatar" href="#">
           <img src="https://cdn4.iconfinder.com/data/icons/ballicons-2-free/100/669347-watch-128.png"> </a> -->
           <ion-radio ng-model="data.field" value="η γραμμή δεν υπάρχει πλέον">Η γραμμή είναι ανενεργή</ion-radio></div>
+          <a class="item item-avatar" href="#">
+          <img src="https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Bus-128.png"></a>
         <div class="col">       
       <!-- <a class="item item-avatar" href="#">
           <img src="https://cdn4.iconfinder.com/data/icons/ballicons-2-free/100/669347-watch-128.png"></a> --> 
@@ -34,10 +40,15 @@
     </div>
       
     <div class="row">
+    <a class="item item-avatar" href="#">
+          <img src="https://cdn3.iconfinder.com/data/icons/ballicons-reloaded-free/512/icon-59-128.png"> </a>
     <div class="col">
       <!-- <a class="item item-avatar" href="#">
           <img src="https://cdn3.iconfinder.com/data/icons/ballicons-reloaded-free/512/icon-59-128.png"> </a> -->
           <ion-radio ng-model="data.field" value="είχε πολύ κρύο/ζέστη">Είχε πολύ κρύο/ζέστη</ion-radio></div>
+          <a class="item item-avatar" href="#">
+          <img src="https://cdn3.iconfinder.com/data/icons/social-icons-5/128/Dislike.png"> </a>
+          
           <div class="col">          
      <!-- <a class="item item-avatar" href="#">
           <img src="https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Bus-128.png"> </a> -->
@@ -45,10 +56,14 @@
     </div>
 
     <div class="row">
+    <a class="item item-avatar" href="#">
+          <img src="https://cdn2.iconfinder.com/data/icons/dellipack/128/people.png"></a>
    <div class="col">
           <!--<a class="item item-avatar" href="#">
           <img src="https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Bus-128.png"></a>-->
            <ion-radio ng-model="data.field" value="υπήρχε συνοστισμός">Υπήρχε συνοστισμός</ion-radio> </div>
+           <a class="item item-avatar" href="#">
+          <img src="https://cdn2.iconfinder.com/data/icons/domestic-and-commercial-cleaning-icon-set/128/sponge_2__.png"></a>
           <div class="col">
            <!--  <a class="item item-avatar" href="#">
           <img src="https://cdn2.iconfinder.com/data/icons/domestic-and-commercial-cleaning-icon-set/128/sponge_2__.png"></a> -->
@@ -86,14 +101,25 @@
 <!-- epilogh vathmologias -->
 
 <div class="item range">
-  <i class="icon ion-volume-low"></i>
+  <i class="icon ion-sad"></i>
   <input type="range" name="rating" ng-model="data.rating" min="0" max="5" value="3" required>
-  <i class="icon ion-volume-high"></i>
+  <i class="icon ion-happy"></i>
 </div>
 
-<button ng-click="sendMessage()" class="button button-clear button-positive">Send</button>
 
-   
+
+   <div class="row">
+      <div class="col">
+        <button ng-click="sendMessage()" class="button button-full button-balanced">
+          Υποβολή
+        </button>
+      </div>
+      <div class="col">
+        <button ng-click="hideModal()" class="button button-full button-assertive">
+          Ακύρωση
+        </button>
+      </div>
+      </div>
     </ion-content>
 
   
