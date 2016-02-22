@@ -23,6 +23,9 @@ function SettingsCtrl($scope, $meteor, $state) {
   //          return NewsFeed.find({}, {sort: {created_at: -1}});
     //    });        
 	//});
+function imageUrl(){
+  return Meteor.user().services.twitter.profile_image_url;
+};
 
 
   $scope.logout = logout;

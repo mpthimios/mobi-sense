@@ -1,14 +1,16 @@
 <ion-modal-view ng-controller="NewMessageCtrl">
   <ion-header-bar>
-    <h1 class="title">New Message</h1>
-    <div class="buttons">
-      <button class="button button-clear button-positive" ng-click="hideModal()">Cancel</button>
-    </div>
+    <h1 class="title">Νέο Μήνυμα</h1>
+    
   </ion-header-bar>
+
+
+ 
 
   <ion-content>
     <label class="item item-input">
-      <textarea placeholder="new message"
+      <textarea 
+                placeholder="Νέα δημοσίευση!"
                 ng-model="data.message"
                 on-return="sendMessage(); closeKeyboard()"
                 on-focus="inputUp()"
@@ -16,17 +18,20 @@
                 dir="auto">
       </textarea>
     </label>
-  </ion-content>
-  <ion-footer-bar keyboard-attach class="bar-stable footer-chat item-input-inset">
-    <button class="button button-clear button-icon button-positive icon ion-ios-upload-outline"></button>
 
-    <span ng-if="data.message.length > 0">
-      <button ng-click="sendMessage()" class="button button-clear button-positive">Send</button>
-    </span>
-    <span ng-if="!data.message || data.message.length === 0">
-      <button ng-click="sendPicture()" class="button button-clear button-icon button-positive icon ion-ios-camera-outline"></button>
-      <i class="buttons-seperator icon ion-android-more-vertical"></i>
-      <button class="button button-clear button-icon button-positive icon ion-ios-mic-outline"></button>
-    </span>
-  </ion-footer-bar>
+
+    <div class="row">
+      <div class="col">
+        <button ng-click="sendMessage()" class="button button-full button-balanced">
+          Υποβολή
+        </button>
+      </div>
+      <div class="col">
+        <button ng-click="hideModal()" class="button button-full button-assertive">
+          Ακύρωση
+        </button>
+      </div>
+      </div>
+  </ion-content>
+
 </ion-modal-view>

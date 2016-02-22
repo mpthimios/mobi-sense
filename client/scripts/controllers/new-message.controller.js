@@ -50,6 +50,7 @@ function NewMessageCtrl($scope, $state, $meteor) {
     });
 
     delete $scope.data.message;
+        $scope.modal.hide();
   }
 
   function inputUp () {
