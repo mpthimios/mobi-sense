@@ -1,11 +1,26 @@
-.item-feed {
-  .last-message-timestamp {
-    position: absolute;
-    top: 16px;
-    right: 38px;
-    font-size: 14px;
-    color: #9A9898;
-  }
+textarea {
+ vertical-align: middle;
+ width: 600px;
+ height: 250px;
+ font: normal 25px verdana;
+
+ line-height: 25px;
+ padding: 2px 10px;
+ border: dashed 2px #ccc;
+}
+
+::-webkit-input-placeholder {
+ font-size: 25px;
+ color: #d0cdfa;
+ text-align: center;
+ font-weight: bold;
+}
+
+::-moz-placeholder {
+ font-size: 25px;
+ color: #d0cdfa;
+ text-align: center;
+ font-weight: bold;
 }
 
 $light: hsla(101, 72%, 37%, 1);  // green
@@ -22,7 +37,7 @@ $blue: rgb(56, 126, 245);
   font-size: 30px;
   background: $blue;
   position: fixed;
-  bottom: 80px; /* Adjust to where you want it */
+  bottom: 90px; /* Adjust to where you want it */
   right: 20px; /* Adjust to where you want it */
   z-index: 9999;
 }
