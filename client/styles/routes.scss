@@ -5,6 +5,10 @@ ion-scroll[direction=y] {
   height: 100vh;
 }
 
+.selected-route{
+  background: lightblue;
+}
+
 /* -------------------------------------
  * timeline
  * ------------------------------------- */
