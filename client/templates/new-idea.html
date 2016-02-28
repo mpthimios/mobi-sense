@@ -1,9 +1,9 @@
 <ion-modal-view ng-controller="NewIdeaCtrl">
   <ion-header-bar>
     <h1 class="title">Ιδέα</h1>
-    <div class="buttons">
+<!--    <div class="buttons">
       <button class="button button-clear button-positive" ng-click="hideModal()">Ακύρωση</button>
-    </div>
+    </div> -->
   </ion-header-bar>
 
   <ion-content>
@@ -36,7 +36,21 @@
       </textarea>
     </label>
 
-    <button ng-click="sendMessage()" class="button button-clear button-positive">Send</button>
+
+<div class="row">
+      <div class="col">
+        <button ng-click="sendMessage()" class="button button-full button-balanced">
+          Υποβολή
+        </button>
+      </div>
+      <div class="col">
+        <button ng-click="hideModal()" class="button button-full button-assertive">
+          Ακύρωση
+        </button>
+      </div>
+      </div>
+
+
   </ion-content>
  
 </ion-modal-view>
