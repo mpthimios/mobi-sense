@@ -15,7 +15,9 @@
         <div class="list" ng-show="!search_focus" style="width:100%;height:70%;">          
             <ion-item
                     ng-repeat="route in routes"                            
-                    ng-click="toggle_search_focus(route.route_id)"
+                    ng-click="routeClicked($index, route)"
+                    ng-dblclick="toggle_search_focus(route.route_id)"
+                    ng-class="{ 'selected-route': $index == selectedRoute }"
                     class="item-chat item-remove-animate item-avatar item-icon-right"
                     type="item-text-wrap">                    
                     <h2>{{route.route_short_name}} {{route.route_long_name}}</h2>
@@ -30,6 +32,8 @@
         </div>    
         <div
                 ng-repeat="stop in stops"
+                ng-class="{ 'selected-route': $index == selectedStop }"
+                ng-click="stopClicked($index, route, stop)"
                 class="timeline"
                 type="item-text-wrap"
                 href="#">

@@ -5,7 +5,13 @@
   </ion-header-bar>
 
   <ion-content>
-         
+    <!-- grammh -->
+    <div class="item item-input-inset">
+      <ion-label><span ng-bind="routeOrStopLabel"></span></ion-label>
+      <ion-label><span ng-bind="routeOrStopText"></span></ion-label>
+    </div>  
+
+
     <div class="row">
     <a class="item item-avatar" href="#">
       <img src="https://cdn4.iconfinder.com/data/icons/ballicons-2-free/100/669347-watch-128.png"></a> 
@@ -21,7 +27,7 @@
         <!-- <div class="col"> -->
         
            <ion-radio ng-model="data.field" value="εξυπηρετεί καλά τις περιοχές από όπου περνά">Εξυπηρετεί καλά τις περιοχές από όπου περνά</ion-radio>
-           </div>
+    </div>
          
     
     <div class="row">
@@ -57,7 +63,7 @@
 
 
 
-<!-- epilogh mesou -->
+<!-- epilogh mesou 
   <label class="item item-input item-select">
     <div class="input-label">
       Μέσο:
@@ -69,21 +75,7 @@
       <option>Προαστιακός</option>
     </select>
   </label>
-
- 
-<!-- epilogh grammhs -->
-
-<form>
-  <div class="item item-input-inset">
-    <label class="item-input-wrapper">
-
-      <input type="text" placeholder="Γραμμή" ng-model="data.line">
-    </label>
-</div>  
- 
-
-</form>
-
+-->
 <!-- epilogh vathmologias -->
 
 <div class="item range">

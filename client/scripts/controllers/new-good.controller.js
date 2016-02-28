@@ -2,7 +2,7 @@ angular
   .module('Buschat')
   .controller('NewGoodCtrl', NewGoodCtrl);
 
-function NewGoodCtrl($scope, $state, $meteor) {
+function NewGoodCtrl($scope, $state, $meteor, selectRouteOrStop) {
 
     $scope.$meteorSubscribe('users').then(function () {
     $scope.users = $scope.$meteorCollection(function () {
@@ -10,7 +10,7 @@ function NewGoodCtrl($scope, $state, $meteor) {
     }, false);
   });
 
-  $scope.hideModal = hideModal;
+$scope.hideModal = hideModal;
 $scope.data = {};
 $scope.sendMessage = sendMessage;
 
@@ -19,7 +19,7 @@ function hideModal() {
   }
 
 
- function sendMessage() {
+function sendMessage() {
    // if (_.isEmpty($scope.data.line)) {
      // return;
     //}
@@ -28,7 +28,7 @@ function hideModal() {
     $meteor.call('newActivity', {
       text: 'Για τη γραμμή ' + $scope.data.line + ' του ' + $scope.data.mean + 'υ αναφέρθηκε ότι  ' + $scope.data.field +'. Η βαθμολογία που έλαβε είναι: ' + $scope.data.rating ,
       type: 'text',
-  classed: 'good'     
+      classed: 'good'     
     });
     console.log('new activity added');
 
