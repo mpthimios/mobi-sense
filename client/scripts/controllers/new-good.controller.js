@@ -24,9 +24,24 @@ function sendMessage() {
      // return;
     //}
     console.log('prin meteor call');
+    var text = "";
+
+    if ($scope.routeOrStop.type == 1){
+      $scope.routeOrStopLabel = "Διαδρομή";
+      $scope.routeOrStopText = $scope.routeOrStop.text;
+      text = 'Για τη γραμμή ' + $scope.routeOrStop.text + ' αναφέρθηκε ότι ' + $scope.data.field +'.';
+    }
+    else if ($scope.routeOrStop.type == 2){
+      $scope.routeOrStopLabel = "Στάση";
+      $scope.routeOrStopText = $scope.routeOrStop.text;
+      text = 'Για τη στάση ' + $scope.routeOrStop.text + ' αναφέρθηκε ότι ' + $scope.data.field +'.';
+    }
+    else{
+      //nothing for now
+    }
 
     $meteor.call('newActivity', {
-      text: 'Για τη γραμμή ' + $scope.data.line + ' του ' + $scope.data.mean + 'υ αναφέρθηκε ότι  ' + $scope.data.field +'. Η βαθμολογία που έλαβε είναι: ' + $scope.data.rating ,
+      text: text,
       type: 'text',
       classed: 'good'     
     });
